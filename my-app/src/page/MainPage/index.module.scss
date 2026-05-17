@@ -1,0 +1,18 @@
+.banner {
+  display: flex !important;
+  flex-direction: row;
+  align-items: center;
+  gap: 18px;
+  padding: 2px 67px;
+
+  &_img {
+    display: block;
+    width: 303px;
+    height: 202px;
+  }
+
+  &_title {
+    font-size: 48px;
+    font-weight: 700;
+  }
+}

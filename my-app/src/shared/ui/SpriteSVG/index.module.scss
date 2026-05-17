@@ -1,0 +1,21 @@
+.icon {
+  display: inline-block;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+
+  // Базовые стили для наследования цвета
+  color: currentColor;
+
+  // Для интерактивных иконок
+  &[onClick] {
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    &:active {
+      transform: scale(0.95);
+    }
+  }
+}

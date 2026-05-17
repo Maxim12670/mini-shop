@@ -1,0 +1,36 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+
+  &_wrapper {
+    display: flex;
+    align-items: center;
+    img {
+      display: block;
+      width: 152px;
+      height: 32px;
+      margin-right: 40px;
+    }
+
+    button {
+      width: 140px;
+      height: 40px;
+      background-color: $c-main-secondary;
+      outline: none;
+      border: none;
+      border-radius: 4px;
+      color: $c-main-onSecondary;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  }
+
+  &_nav {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+  }
+}
