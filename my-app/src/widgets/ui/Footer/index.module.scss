@@ -1,0 +1,39 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+  &_wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 40px;
+  }
+
+  &_logo {
+    display: block;
+  }
+
+  &_list {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+    font-size: 12px;
+    color: $c-main-onSurface;
+
+    li {
+      cursor: pointer;
+    }
+  }
+
+  &_phone {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: $c-main-onSurface;
+
+    h2 {
+      font-size: 16px;
+    }
+  }
+}

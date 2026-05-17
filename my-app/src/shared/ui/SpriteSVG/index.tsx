@@ -2,7 +2,7 @@
 import { memo } from "react";
 import styles from "./index.module.scss";
 
-export type IconName = "favorites" | "basket" | "order";
+export type IconName = "favorites" | "basket" | "order" | "star" | "phone";
 
 interface IconProps {
   name: IconName;

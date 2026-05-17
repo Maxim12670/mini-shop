@@ -1,3 +1,12 @@
+.main-page {
+  &_wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    padding: 80px 0;
+  }
+}
+
 .banner {
   display: flex !important;
   flex-direction: row;
@@ -14,5 +23,28 @@
   &_title {
     font-size: 48px;
     font-weight: 700;
+    color: $c-main-onSurface;
   }
+}
+
+.new {
+  &_wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+}
+
+.title {
+  font-size: 36px;
+  font-weight: 700;
+  color: $c-main-onSurface;
+  margin-bottom: 40px;
+}
+
+.article {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
