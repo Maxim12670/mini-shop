@@ -23,7 +23,11 @@ export const Header = () => {
       <ContentContainer>
         <div className={styles.header}>
           <div className={styles.header_wrapper}>
-            <img src={Logo} alt="logo" />
+            <img
+              src={Logo}
+              alt="logo"
+              onClick={() => navigate(RoutePath.main)}
+            />
             <button onClick={() => navigate(RoutePath.main)}>Каталог</button>
           </div>
           <div className={styles.header_nav}>

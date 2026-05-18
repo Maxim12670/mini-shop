@@ -6,6 +6,7 @@ export const Footer = () => {
   return (
     <div
       style={{
+        marginTop: "auto",
         display: "flex",
         alignItems: "center",
         padding: "24px 0 27px 0",
