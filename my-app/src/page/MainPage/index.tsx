@@ -1,6 +1,5 @@
 import styles from "./index.module.scss";
 import { ContentContainer } from "../../shared/ui";
-import { Header, Footer } from "../../widgets/ui";
 import { Products } from "../../shared/assets/image";
 import { Map, ProductCard } from "../../feature/ui";
 import { Article } from "./component/Article";
@@ -8,7 +7,6 @@ import { Article } from "./component/Article";
 export const MainPage = () => {
   return (
     <>
-      <Header />
       <section style={{ backgroundColor: "#FFFFFF", zIndex: 2 }}>
         <ContentContainer>
           <div className={styles.banner}>
@@ -54,7 +52,6 @@ export const MainPage = () => {
           </div>
         </ContentContainer>
       </div>
-      <Footer />
     </>
   );
 };

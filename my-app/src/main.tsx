@@ -1,11 +1,12 @@
 import { StrictMode } from "react";
-import "leaflet/dist/leaflet.css";
+import { RouterProvider } from "react-router-dom";
 import { createRoot } from "react-dom/client";
+import "leaflet/dist/leaflet.css";
 import "./index.scss";
-import App from "./App.tsx";
+import { router } from "./app/router/router.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <App />
+    <RouterProvider router={router} />
   </StrictMode>,
 );

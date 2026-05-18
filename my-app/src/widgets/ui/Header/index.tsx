@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import {
   BasketButton,
   FavoritesButton,
@@ -6,8 +7,11 @@ import {
 import { Logo } from "../../../shared/assets/image";
 import { ContentContainer } from "../../../shared/ui";
 import styles from "./index.module.scss";
+import { RoutePath } from "../../../app/router/router";
 
 export const Header = () => {
+  const navigate = useNavigate();
+
   return (
     <div
       style={{
@@ -20,7 +24,7 @@ export const Header = () => {
         <div className={styles.header}>
           <div className={styles.header_wrapper}>
             <img src={Logo} alt="logo" />
-            <button>Каталог</button>
+            <button onClick={() => navigate(RoutePath.main)}>Каталог</button>
           </div>
           <div className={styles.header_nav}>
             <FavoritesButton />
