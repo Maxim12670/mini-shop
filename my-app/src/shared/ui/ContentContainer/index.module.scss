@@ -4,13 +4,6 @@
   width: 1208px;
 }
 
-// desktop
-@media (min-width: 1208px) {
-  .container {
-    // background-color: red;
-  }
-}
-
 // laptop
 @media (min-width: 768px) and (max-width: 1207px) {
   .container {

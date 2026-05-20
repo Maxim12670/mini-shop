@@ -2,7 +2,14 @@
 import { memo } from "react";
 import styles from "./index.module.scss";
 
-export type IconName = "favorites" | "basket" | "order" | "star" | "phone";
+export type IconName =
+  | "favorites"
+  | "basket"
+  | "order"
+  | "star"
+  | "phone"
+  | "checkbox-delete"
+  | "checkbox-add";
 
 interface IconProps {
   name: IconName;
