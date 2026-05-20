@@ -7,9 +7,7 @@ export const ProcessPage = () => {
     <ContentContainer>
       <div className={styles.container}>
         <img className={styles.img} src={Process} alt="в процессе разработки" />
-        <h2 className={styles.title}>
-          Упс... Данная страница в стадии разработки
-        </h2>
+        <h2>Упс... Данная страница в стадии разработки</h2>
       </div>
     </ContentContainer>
   );

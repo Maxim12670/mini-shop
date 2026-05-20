@@ -45,6 +45,8 @@
 
   &_descr {
     display: flex;
+    overflow: hidden;
+    text-overflow: ellipsis;
     max-height: 120px;
     font-size: 18px;
     color: $c-main-onSurface;
