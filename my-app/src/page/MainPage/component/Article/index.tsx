@@ -25,7 +25,7 @@ export const Article = (props: INews) => {
       <div className={styles.article_container}>
         <span className={styles.article_date}>{formatDate(publishedAt)}</span>
         <span className={styles.article_title}>{title}</span>
-        <span className={styles.article_descr}>{description}</span>
+        <div className={styles.article_descr}>{description}</div>
         <button className={styles.article_btn} onClick={() => window.open(url)}>
           Подробнее
         </button>

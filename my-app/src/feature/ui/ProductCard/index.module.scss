@@ -29,6 +29,10 @@
     color: $c-main-onSurface !important;
     background-color: $c-grayscale-lightest;
     cursor: pointer;
+
+    &_active {
+      color: $c-main-primary !important;
+    }
   }
 
   &_container {
@@ -63,6 +67,10 @@
 
     &_item {
       color: $c-main-primary !important;
+
+      &_inactive {
+        color: $c-grayscale-light !important;
+      }
     }
   }
 

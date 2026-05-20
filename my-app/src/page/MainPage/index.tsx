@@ -4,15 +4,18 @@ import { Products } from "../../shared/assets/image";
 import { Map, ProductCard } from "../../feature/ui";
 import { Article } from "./component/Article";
 import { getProducts } from "../../entity/api/product";
-import type { IProduct } from "../../entity/model/product";
 import { useLayoutEffect, useState } from "react";
 import { getNews } from "../../entity/api/news";
 import { type INews } from "../../entity/model/news";
+import { useAppDispatch, useAppSelector } from "../../app/store/hook";
+import { initializeProduct } from "../../app/store/productSlice";
 
 export const MainPage = () => {
-  const [products, setProducts] = useState<IProduct[]>([]);
   const [news, setNews] = useState<INews[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
+
+  const dispatch = useAppDispatch();
+  const { product } = useAppSelector((state) => state.product);
 
   useLayoutEffect(() => {
     const fetchProductsAndNews = async () => {
@@ -20,7 +23,7 @@ export const MainPage = () => {
       try {
         const productResult = await getProducts();
         const newsResult = await getNews();
-        setProducts(productResult);
+        dispatch(initializeProduct(productResult));
         setNews(newsResult);
       } catch (error) {
         console.log("Ошибка загрузки:", error);
@@ -33,7 +36,7 @@ export const MainPage = () => {
   }, []);
   return (
     <>
-      <section style={{ backgroundColor: "#FFFFFF", zIndex: 2 }}>
+      <section style={{ backgroundColor: "#FFFFFF" }}>
         <ContentContainer>
           <div className={styles.banner}>
             <img
@@ -53,7 +56,7 @@ export const MainPage = () => {
             <section className={styles.new}>
               <h2 className={styles.title}>Новинки</h2>
               <div className={styles.new_wrapper}>
-                {products.map((item, i) => (
+                {product.map((item, i) => (
                   <ProductCard key={i} {...item} />
                 ))}
               </div>

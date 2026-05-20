@@ -3,13 +3,11 @@ import type { IProduct } from "../../entity/model/product";
 
 interface IState {
   product: IProduct[];
-  favorites: IProduct[];
   basket: IProduct[];
 }
 
 const initialState: IState = {
   product: [],
-  favorites: [],
   basket: [],
 };
 
@@ -21,19 +19,11 @@ const productSlice = createSlice({
       state.product = action.payload;
     },
 
-    addItemFavorites: (state, action: PayloadAction<IProduct>) => {
-      const exists = state.favorites.some(
-        (item) => item.id === action.payload.id,
-      );
-
-      if (!exists) {
-        state.favorites.push(action.payload);
+    toggleItemFavorite: (state, action: PayloadAction<number>) => {
+      const product = state.product.find((item) => item.id === action.payload);
+      if (product) {
+        product.isFavorite = !product.isFavorite;
       }
-    },
-    removeItemFavorites: (state, action: PayloadAction<number>) => {
-      state.favorites = state.favorites.filter(
-        (item) => item.id !== action.payload,
-      );
     },
 
     addItemBasket: (state, action: PayloadAction<IProduct>) => {
@@ -54,8 +44,7 @@ const productSlice = createSlice({
 
 export const {
   initializeProduct,
-  addItemFavorites,
-  removeItemFavorites,
+  toggleItemFavorite,
   addItemBasket,
   removeItemBasket,
 } = productSlice.actions;
