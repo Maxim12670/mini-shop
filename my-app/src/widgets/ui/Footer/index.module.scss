@@ -8,6 +8,10 @@
     flex-direction: row;
     align-items: center;
     gap: 40px;
+
+    @media (min-width: 768px) and (max-width: 1023px) {
+      align-items: start;
+    }
   }
 
   &_logo {
@@ -24,6 +28,15 @@
     li {
       cursor: pointer;
     }
+
+    @media (max-width: 1024px) {
+      gap: 20px;
+      font-size: 10px;
+    }
+
+    @media (min-width: 768px) and (max-width: 1023px) {
+      flex-direction: column;
+    }
   }
 
   &_phone {
@@ -32,8 +45,20 @@
     gap: 8px;
     color: $c-main-onSurface;
 
+    @media (max-width: 1024px) {
+      font-size: 6px;
+    }
+
+    @media (min-width: 768px) and (max-width: 1023px) {
+      align-items: start;
+    }
+
     h2 {
       font-size: 16px;
+
+      @media (max-width: 1024px) {
+        font-size: 14px;
+      }
     }
   }
 }
