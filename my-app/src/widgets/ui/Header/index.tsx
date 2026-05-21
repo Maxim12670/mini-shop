@@ -8,12 +8,23 @@ import { Logo } from "../../../shared/assets/image";
 import { ContentContainer } from "../../../shared/ui";
 import styles from "./index.module.scss";
 import { RoutePath } from "../../../app/router/router";
+import { useState } from "react";
 
 export const Header = () => {
   const navigate = useNavigate();
 
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+
   return (
-    <div
+    <header
       style={{
         position: "relative",
         background: "#ffffff",
@@ -21,22 +32,51 @@ export const Header = () => {
       }}
     >
       <ContentContainer>
-        <div className={styles.header}>
-          <div className={styles.header_wrapper}>
-            <img
-              src={Logo}
-              alt="logo"
-              onClick={() => navigate(RoutePath.main)}
-            />
-            <button onClick={() => navigate(RoutePath.main)}>Каталог</button>
+        <>
+          <div className={styles.header}>
+            <div className={styles.header_wrapper}>
+              <img
+                src={Logo}
+                alt="logo"
+                onClick={() => navigate(RoutePath.main)}
+                className={styles.logo}
+              />
+              <button onClick={() => navigate(RoutePath.main)}>Каталог</button>
+            </div>
+
+            {/* Десктопная навигация */}
+            <div className={styles.header_nav}>
+              <FavoritesButton />
+              <OrderButton />
+              <BasketButton />
+            </div>
+
+            {/* Кнопка бургер-меню (видна только на мобильных) */}
+            <button
+              className={`${styles.burger_button} ${isMenuOpen ? styles.active : ""}`}
+              onClick={toggleMenu}
+              aria-label="Меню"
+            >
+              <span className={styles.burger_line}></span>
+              <span className={styles.burger_line}></span>
+              <span className={styles.burger_line}></span>
+            </button>
           </div>
-          <div className={styles.header_nav}>
-            <FavoritesButton />
-            <OrderButton />
-            <BasketButton />
+
+          {/* Мобильное меню */}
+          <div
+            className={`${styles.mobile_menu} ${isMenuOpen ? styles.mobile_menu_open : ""}`}
+          >
+            <div className={styles.mobile_menu_content}>
+              <div className={styles.mobile_nav}>
+                <FavoritesButton onClick={closeMenu} />
+                <OrderButton onClick={closeMenu} />
+                <BasketButton onClick={closeMenu} />
+              </div>
+            </div>
           </div>
-        </div>
+        </>
       </ContentContainer>
-    </div>
+    </header>
   );
 };

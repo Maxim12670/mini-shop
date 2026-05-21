@@ -4,7 +4,7 @@ import { ContentContainer, Icon } from "../../../shared/ui";
 
 export const Footer = () => {
   return (
-    <div
+    <footer
       style={{
         marginTop: "auto",
         display: "flex",
@@ -31,6 +31,6 @@ export const Footer = () => {
           </div>
         </div>
       </ContentContainer>
-    </div>
+    </footer>
   );
 };

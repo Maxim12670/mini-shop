@@ -4,7 +4,11 @@ import { RoutePath } from "../../../app/router/router";
 import { useNavigate } from "react-router-dom";
 import { useAppSelector } from "../../../app/store/hook";
 
-export const FavoritesButton = () => {
+interface FavoritesButtonProps {
+  onClick?: () => void;
+}
+
+export const FavoritesButton = ({ onClick }: FavoritesButtonProps) => {
   const navigate = useNavigate();
   const { product } = useAppSelector((state) => state.product);
   const favoriteProduct = product.filter((item) => item.isFavorite === true);
@@ -12,7 +16,10 @@ export const FavoritesButton = () => {
   return (
     <button
       className={styles.button}
-      onClick={() => navigate(RoutePath.favorite)}
+      onClick={() => {
+        onClick?.();
+        navigate(RoutePath.favorite);
+      }}
     >
       {favoriteProduct.length > 0 && (
         <ChipCount

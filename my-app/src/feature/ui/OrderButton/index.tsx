@@ -3,13 +3,20 @@ import { Icon } from "../../../shared/ui";
 import styles from "../index.module.scss";
 import { RoutePath } from "../../../app/router/router";
 
-export const OrderButton = () => {
+interface OrderButtonProps {
+  onClick?: () => void;
+}
+
+export const OrderButton = ({ onClick }: OrderButtonProps) => {
   const navigate = useNavigate();
 
   return (
     <button
       className={styles.button}
-      onClick={() => navigate(RoutePath.process)}
+      onClick={() => {
+        onClick?.();
+        navigate(RoutePath.process);
+      }}
     >
       <Icon name="order" size={24} />
       <div>Заказы</div>

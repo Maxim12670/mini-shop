@@ -4,9 +4,14 @@
   width: 1208px;
 }
 
-// laptop
-@media (min-width: 768px) and (max-width: 1207px) {
+@media (max-width: 1024px) {
   .container {
-    // background-color: black;
+    width: 960px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .container {
+    width: 768px;
   }
 }
