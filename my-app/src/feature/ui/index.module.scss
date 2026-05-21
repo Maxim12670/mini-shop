@@ -8,8 +8,19 @@
   border: none;
   background-color: transparent;
   cursor: pointer;
+  position: relative;
 
   &:hover {
     color: $c-main-primary;
+  }
+
+  &_basket {
+    top: -6px;
+    right: 9px;
+  }
+
+  &_favorite {
+    top: -6px;
+    right: 14px;
   }
 }

@@ -1,0 +1,12 @@
+.chip {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 12px;
+  height: 12px;
+  border-radius: 4px;
+  background-color: $c-main-primary;
+  color: $c-main-onPrimary;
+  font-size: 12px;
+  position: absolute;
+}
