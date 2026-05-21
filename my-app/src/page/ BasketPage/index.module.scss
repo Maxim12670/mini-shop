@@ -4,12 +4,32 @@
   gap: 60px;
   padding: 80px 0;
 
+  @media (max-width: 1024px) {
+    gap: 40px;
+    padding: 40px 0;
+  }
+
+  @media (min-width: 767px) and (max-width: 1023px) {
+    gap: 20px;
+    padding: 30px 15px;
+  }
+
   &_title {
     width: 342px;
     position: relative;
     font-size: 64px;
     font-weight: 700;
     color: $c-main-onSurface;
+
+    @media (max-width: 1024px) {
+      font-size: 30px;
+      width: 195px;
+    }
+
+    @media (min-width: 768px) and (max-width: 1023px) {
+      font-size: 18px;
+      width: 132px;
+    }
 
     &_count {
       display: flex;
@@ -24,6 +44,18 @@
       border-radius: 4px;
       background-color: $c-main-primary;
       color: $c-main-onPrimary;
+
+      @media (max-width: 1024px) {
+        font-size: 14px;
+        width: 18px;
+        height: 26px;
+      }
+
+      @media (min-width: 768px) and (max-width: 1023px) {
+        font-size: 12px;
+        width: 16px;
+        height: 20px;
+      }
     }
   }
 
@@ -40,16 +72,16 @@
     gap: 24px;
   }
 
-  &_container {
-    // width:;
-  }
-
   &_information {
     display: flex;
     flex-direction: column;
     gap: 24px;
     width: 272px;
     padding-top: 52px;
+
+    @media (max-width: 1024px) {
+      gap: 16px;
+    }
   }
 
   &_list {
@@ -120,6 +152,10 @@
     color: $c-main-onSurface;
     margin-left: 8px;
     margin-top: 10px;
+
+    @media (max-width: 1024px) {
+      font-size: 14px;
+    }
   }
 
   &_price {
@@ -127,6 +163,10 @@
     font-size: 18px;
     font-weight: 700;
     color: $c-main-onSurface;
+
+    @media (max-width: 1024px) {
+      font-size: 16px;
+    }
   }
 }
 
@@ -146,6 +186,10 @@
   &_title {
     font-size: 16px;
     color: $c-grayscale-hard;
+
+    @media (max-width: 1024px) {
+      font-size: 14px;
+    }
   }
 
   &_price {
@@ -166,5 +210,14 @@
     color: $c-main-primary;
     background-color: #fcd5ba;
     cursor: pointer;
+
+    @media (max-width: 1024px) {
+      font-size: 16px;
+      height: 45px;
+    }
+
+    @media (min-width: 768px) and (max-width: 1023px) {
+      font-size: 16px;
+    }
   }
 }

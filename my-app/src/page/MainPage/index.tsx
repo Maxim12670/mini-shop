@@ -34,6 +34,7 @@ export const MainPage = () => {
 
     fetchProductsAndNews();
   }, []);
+
   return (
     <>
       <section style={{ backgroundColor: "#FFFFFF" }}>

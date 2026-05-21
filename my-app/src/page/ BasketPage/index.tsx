@@ -90,7 +90,11 @@ export const BasketPage = () => {
                 <div className={styles.information_divider}></div>
                 <div className={styles.information_wrapper}>
                   <div className={styles.information_title}>
-                    {basket.length} товара
+                    {selectedItems.length === 0
+                      ? `0 товаров`
+                      : selectedItems.length === 1
+                        ? `${1} товар`
+                        : `${selectedItems.length} товара`}
                   </div>
                   <div className={styles.information_price}>
                     {Math.round(totalPrice)} ₽{" "}

@@ -44,14 +44,12 @@ export const Header = () => {
               <button onClick={() => navigate(RoutePath.main)}>Каталог</button>
             </div>
 
-            {/* Десктопная навигация */}
             <div className={styles.header_nav}>
               <FavoritesButton />
               <OrderButton />
               <BasketButton />
             </div>
 
-            {/* Кнопка бургер-меню (видна только на мобильных) */}
             <button
               className={`${styles.burger_button} ${isMenuOpen ? styles.active : ""}`}
               onClick={toggleMenu}
@@ -63,7 +61,6 @@ export const Header = () => {
             </button>
           </div>
 
-          {/* Мобильное меню */}
           <div
             className={`${styles.mobile_menu} ${isMenuOpen ? styles.mobile_menu_open : ""}`}
           >
