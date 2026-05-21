@@ -5,6 +5,11 @@
   border-radius: 4px;
   background-color: $c-main-surface;
 
+  @media (max-width: 1024px) {
+    width: 223px;
+    height: max-content;
+  }
+
   &:hover {
     box-shadow: 4px 8px 16px 0px rgba(255, 102, 51, 0.2);
   }
@@ -41,6 +46,10 @@
     gap: 8px;
     height: 189px;
     padding: 8px;
+
+    @media (max-width: 1024px) {
+      justify-content: space-between;
+    }
   }
 
   &_price {
@@ -48,6 +57,11 @@
     font-size: 18px;
     font-weight: 700;
     color: $c-main-onSurface;
+
+    @media (max-width: 1024px) {
+      font-size: 16px;
+      height: 30px;
+    }
   }
 
   &_descr {
@@ -57,6 +71,10 @@
     font-size: 16px;
     font-weight: 400;
     color: $c-main-onSurface;
+
+    @media (max-width: 1024px) {
+      font-size: 14px;
+    }
   }
 
   &_rating {
@@ -86,6 +104,10 @@
     background-color: #fff;
     color: $c-main-secondary;
     cursor: pointer;
+
+    @media (max-width: 1024px) {
+      font-size: 14px;
+    }
 
     &:hover {
       background-color: $c-main-primary;

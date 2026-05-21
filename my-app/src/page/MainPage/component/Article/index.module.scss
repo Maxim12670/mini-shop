@@ -10,6 +10,13 @@
     box-shadow: 1px 2px 4px 0px #0000001a;
     cursor: pointer;
 
+    @media (max-width: 1024px) {
+      width: 310px;
+    }
+
+    @media (min-width: 767px) and (max-width: 1023px) {
+    }
+
     &:hover {
       box-shadow: 4px 8px 16px 0px #ff663333;
     }
@@ -41,6 +48,13 @@
     font-size: 18px;
     font-weight: 700;
     color: $c-main-onSurface;
+
+    @media (max-width: 1024px) {
+      font-size: 16px;
+    }
+
+    @media (min-width: 767px) and (max-width: 1023px) {
+    }
   }
 
   &_descr {
@@ -50,6 +64,13 @@
     max-height: 120px;
     font-size: 18px;
     color: $c-main-onSurface;
+
+    @media (max-width: 1024px) {
+      font-size: 16px;
+    }
+
+    @media (min-width: 767px) and (max-width: 1023px) {
+    }
   }
 
   &_btn {
