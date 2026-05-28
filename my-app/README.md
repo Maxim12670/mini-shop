@@ -1,3 +1,5 @@
+# FOR USING APP YOU NEED VPN!
+
 # React + TypeScript + Vite
 
 # How to start project?
